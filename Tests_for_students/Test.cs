@@ -27,7 +27,12 @@ namespace Tests_for_students
             this.path = path;
         }
 
-        public static Test OpenTest(string path) //will return full test (List of questions)
+        public void SetPath (string path)
+        {
+            this.path = path;
+        }
+
+        public static Test OpenTest(string path)
         {
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
@@ -60,23 +65,3 @@ namespace Tests_for_students
         }
     }
 }
-/* public void SaveTest(List<Question> qList, string path)
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-
-            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, qList);
-            }
-        }
-
-        public void SaveTest()
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-
-            using (FileStream fs = new FileStream(this.path, FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, this.qList);
-            }
-        }
-*/

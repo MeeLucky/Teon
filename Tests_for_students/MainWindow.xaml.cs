@@ -23,6 +23,10 @@ namespace Tests_for_students
         public MainWindow ()
         {
             InitializeComponent();
+
+            Create_EditTest cet = new Create_EditTest(null);
+            cet.Show();
+            this.Close();
         }
 
         private void Student_Click (object v, RoutedEventArgs e)

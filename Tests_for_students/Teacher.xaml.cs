@@ -24,9 +24,16 @@ namespace Tests_for_students
             InitializeComponent();
         }
 
-        private void Create_Click (object v, RoutedEventArgs e)
+        private void EditTest_Click (object v, RoutedEventArgs e)
         {
 
+        }
+
+        private void CreateTest_Click (object v, RoutedEventArgs e)
+        {
+            Create_EditTest cet = new Create_EditTest(null);
+            cet.Show();
+            this.Close();
         }
     }
 }

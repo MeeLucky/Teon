@@ -9,8 +9,8 @@
     <StackPanel Margin="20">
         <TextBlock TextWrapping="Wrap" FontSize="18" Text=" Вы можете редактировать уже ранее созданный тест или создать новый."/>
         <Button FontSize="18" Margin="30,10" 
-                Click="Create_Click" Content="Редактировать тест"/>
+                Click="EditTest_Click" Content="Редактировать тест"/>
         <Button FontSize="18" Margin="30,10" 
-                Click="Create_Click" Content="Создать тест" />
+                Click="CreateTest_Click" Content="Создать тест" />
     </StackPanel>
 </Window>

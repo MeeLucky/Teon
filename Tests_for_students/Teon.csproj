@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,8 +57,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CreateNewTest.xaml.cs">
-      <DependentUpon>CreateNewTest.xaml</DependentUpon>
+    <Compile Include="Create-EditTest.xaml.cs">
+      <DependentUpon>Create-EditTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Question.cs" />
     <Compile Include="Student.xaml.cs">
@@ -72,7 +74,7 @@
     <Compile Include="testWindow.xaml.cs">
       <DependentUpon>testWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="CreateNewTest.xaml">
+    <Page Include="Create-EditTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,37 @@
+﻿<Window x:Class="Tests_for_students.Create_EditTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tests_for_students"
+        mc:Ignorable="d"
+        WindowState="Maximized" 
+        Title="Create_EditTest" Height="450" Width="800">
+    <Grid x:Name="Root">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer x:Name="C_Left" Background="#eee" Grid.Row="0" Grid.RowSpan="2">
+            <StackPanel>
+                <TextBox x:Name="C_TestName" Text="Название теста" 
+                     Background="#eee" FontSize="16"/>
+
+                <StackPanel x:Name="C_QList" Orientation="Vertical"/>
+
+                <Button Content="Добавить вопрос" Click="AddQuest_Click" Margin="30, 20"/>
+                <Button Content="Сохранить тест" Click="SaveNewTest_Click" Margin="30, 0"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <ScrollViewer Grid.Row="0" Grid.Column="1">
+            <StackPanel x:Name="C_Right" 
+                    Orientation="Vertical" >
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
