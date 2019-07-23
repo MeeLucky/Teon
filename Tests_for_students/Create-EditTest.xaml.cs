@@ -27,6 +27,9 @@ namespace Tests_for_students
         public Create_EditTest(Test t)
         {
             InitializeComponent();
+            test = t;
+            C_TestName.Content = test.testName;
+            RefreshQList();
         }
 
         private void AddQuest_Click (object v, RoutedEventArgs e)
@@ -60,7 +63,7 @@ namespace Tests_for_students
 
         private void EditQuest (object v, RoutedEventArgs e)
         {
-            C_Right.Children.RemoveRange(0, C_Right.Children.Count);
+            C_Right.Children.Clear();
             Button btn = (Button)v;
             int id = Convert.ToInt32(btn.Tag);
 
@@ -191,7 +194,7 @@ namespace Tests_for_students
 
             test.qList[id] = new Question(quest, ans, mask);
 
-            C_Right.Children.RemoveRange(0, C_Right.Children.Count);
+            C_Right.Children.Clear();
             field1 = null;
             field2 = null;
             RefreshQList();
@@ -217,7 +220,7 @@ namespace Tests_for_students
             del.Click += deletAnswer;
 
             TextBox balls = new TextBox();
-            balls.Text = "";
+            balls.Text = "0";
             balls.FontSize = 14;
             balls.Width = 30;
 
@@ -236,6 +239,77 @@ namespace Tests_for_students
             field2.Children.Add(str);
         }
 
+        private void SetTest_Click (object v, RoutedEventArgs e)
+        {
+            TextBox testName = new TextBox();
+            testName.FontSize = 16;
+            testName.Text = test.testName;
+            testName.Margin = new Thickness(20, 0, 20, 0);
+
+            TextBox author = new TextBox();
+            author.FontSize = 16;
+            author.Text = test.author;
+            author.Margin = new Thickness(20, 0, 20, 0);
+
+            TextBox desk = new TextBox();
+            desk.FontSize = 16;
+            desk.Text = test.desckription;
+            desk.Margin = new Thickness(20, 0, 20, 0);
+
+            Button SaveTestInfo = new Button();
+            SaveTestInfo.Click += SaveTestInfo_Click;
+            SaveTestInfo.Width = 175;
+            SaveTestInfo.HorizontalAlignment = HorizontalAlignment.Left;
+            SaveTestInfo.Content = "Сохранить";
+            SaveTestInfo.Margin = new Thickness(30, 20, 0, 0);
+
+            //tips
+            TextBlock testNameTip = new TextBlock();
+            testNameTip.Text = "Название теста";
+            testNameTip.FontSize = 16;
+            testNameTip.Margin = new Thickness(30, 35, 0, 0);
+            //testNameTip
+            TextBlock authorTip = new TextBlock();
+            authorTip.Text = "ФИО автора";
+            authorTip.FontSize = 16;
+            authorTip.Margin = new Thickness(30, 0, 0, 0);
+            //authorTip
+            TextBlock deskTip = new TextBlock();
+            deskTip.Text = "Описание теста";
+            deskTip.FontSize = 16;
+            deskTip.Margin = new Thickness(30, 0, 0, 0);
+            //deskTip
+
+            C_Right.Children.Clear();
+            C_Right.Children.Add(testNameTip);
+            C_Right.Children.Add(testName);
+            C_Right.Children.Add(authorTip);
+            C_Right.Children.Add(author);
+            C_Right.Children.Add(deskTip);
+            C_Right.Children.Add(desk);
+            C_Right.Children.Add(SaveTestInfo);
+        }
+
+        private void SaveTestInfo_Click(object v, RoutedEventArgs e)
+        {
+            Button btn = (Button)v;
+            StackPanel root = (StackPanel)btn.Parent;
+
+            TextBox testName = (TextBox)root.Children[1];
+            TextBox author = (TextBox)root.Children[3];
+            TextBox desk = (TextBox)root.Children[5];
+
+            StackPanel btnParent = (StackPanel)btn.Parent;
+            C_TestName.Content = testName.Text;
+
+            test.testName = testName.Text;
+            test.author = author.Text;
+            test.desckription = desk.Text;
+
+            btnParent.Children.Clear();
+        }
+
+
         private void SaveNewTest_Click (object v, RoutedEventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -243,11 +317,10 @@ namespace Tests_for_students
             {
                 string path = sfd.FileName;
                 int dotPos = path.Substring(0, path.Length).IndexOf(".");
-                if (dotPos != -1)//поиск точки в последних 5 символах
+                if (dotPos != -1)
                     path = path.Substring(0, path.Length - (path.Length - dotPos));
                 path += ".dat";
 
-                //sfd.FileName + ".dat"
                 test.SetPath(path);
                 test.SaveTest();
             }

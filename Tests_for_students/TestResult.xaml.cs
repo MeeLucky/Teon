@@ -43,11 +43,11 @@ namespace Tests_for_students
 
             C_Score.Text = $"{userScore}/{maxScore}    {proc}%";
 
-            C_StartTime.Text = times[0].ToLongTimeString();
-            C_EndTime.Text = times[1].ToLongTimeString();
+            C_StartTime.Text = $"Начало тестирования: {times[0].ToLongTimeString()}";
+            C_EndTime.Text = $"Конец тестирования: {times[1].ToLongTimeString()}";
             TimeSpan span = times[1] - times[0];
             double minuts = Math.Round(span.TotalMinutes, 1);
-            C_TravelTime.Text = $"{minuts.ToString()} мин.";
+            C_TravelTime.Text = $"Потрачено времени: {minuts.ToString()} мин.";
         }
 
         private void Restart_Click (object v, RoutedEventArgs e)

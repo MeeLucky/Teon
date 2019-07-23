@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,15 @@ namespace Tests_for_students
 
         private void EditTest_Click (object v, RoutedEventArgs e)
         {
+            Test test = new Test(null);
 
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == true)
+                test = Test.OpenTest(ofd.FileName);
+
+            Create_EditTest CEt = new Create_EditTest(test);
+            CEt.Show();
+            this.Close();
         }
 
         private void CreateTest_Click (object v, RoutedEventArgs e)

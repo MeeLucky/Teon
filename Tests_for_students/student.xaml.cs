@@ -22,6 +22,8 @@ namespace Tests_for_students
     {
 
         Test test;
+        bool testSelected = false;
+        bool tryName = false;
 
         public student()
         {
@@ -34,31 +36,38 @@ namespace Tests_for_students
             if (openFileDialog.ShowDialog() == true)
             {
                 test = Test.OpenTest(openFileDialog.FileName);
+                if (test == null)
+                {
+                    MessageBox.Show("Ошибка открытия.");
+                    return;
+                }
                 C_testName.Text = test.testName;
+                C_testDesk.Text = test.desckription;
+                testSelected = true;
+            }
+            else
+            {
+                testSelected = false;
             }
         }
 
-        static bool tryName = false;
         private void StartTest_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                test.userName = C_UserName.Text;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Выберите тест!");
-            }
             if (C_UserName.Text == "" && !tryName)
             {
                 MessageBox.Show("Если не указать имя, то вы продолжите как аноним!");
                 tryName = true;
             }
-            else
-            {
+
+            if(testSelected)
+            { 
                 testWindow testWin = new testWindow(test);
                 testWin.Show();
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Выберете тест!");
             }
 
         }

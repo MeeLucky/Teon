@@ -15,6 +15,7 @@
                 <StackPanel>
                     <Button FontSize="18" Click="StartTest_Click">Начать тестирование</Button>
                     <TextBlock x:Name="C_testName" HorizontalAlignment="Center" FontSize="18" Margin="10"/>
+                    <TextBlock x:Name="C_testDesk" HorizontalAlignment="Center" FontSize="16" Margin="10"/>
                 </StackPanel>
             </WrapPanel>
         </WrapPanel>
