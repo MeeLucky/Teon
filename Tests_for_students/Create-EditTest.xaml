@@ -25,6 +25,8 @@
 
                 <Button Content="Добавить вопрос" Click="AddQuest_Click" Margin="30, 20"/>
                 <Button Content="Сохранить тест" Click="SaveNewTest_Click" Margin="30, 0"/>
+                <Button Content="В главное меню" Click="GoMain_Click" Margin="30, 10"/>
+
             </StackPanel>
         </ScrollViewer>
 

@@ -57,6 +57,7 @@ namespace Tests_for_students
             {
                 MessageBox.Show("Если не указать имя, то вы продолжите как аноним!");
                 tryName = true;
+                return;
             }
 
             if(testSelected)

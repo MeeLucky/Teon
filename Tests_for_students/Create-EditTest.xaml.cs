@@ -148,15 +148,44 @@ namespace Tests_for_students
             ok.Width = 50;
             ok.HorizontalAlignment = HorizontalAlignment.Left;
             ok.FontSize = 14;
-            ok.Margin = new Thickness(30, 30, 0, 0);
+            ok.Margin = new Thickness(30, 30, 30, 0);
+
+            Button delQuest = new Button();
+            delQuest.Content = "Удалить вопрос";
+            delQuest.Click += delQuest_Click;
+            delQuest.FontSize = 14;
+            delQuest.Width = 125;
+            delQuest.Tag = id;
+            delQuest.Margin = new Thickness(0, 30, 0, 0);
+
+            StackPanel control = new StackPanel();
+            control.Orientation = Orientation.Horizontal;
+            control.HorizontalAlignment = HorizontalAlignment.Left;
+            control.Children.Add(ok);
+            control.Children.Add(delQuest);
 
             C_Right.Children.Add(field1);
             C_Right.Children.Add(field2);
             C_Right.Children.Add(addAns);
-            C_Right.Children.Add(ok);
+            C_Right.Children.Add(control);
         }
 
-        
+        private void delQuest_Click(object v, RoutedEventArgs e)
+        {
+            Button b = (Button)v;
+            int id = Convert.ToInt32(b.Tag);
+            test.qList.RemoveAt(id);
+            RefreshQList();
+            C_Right.Children.Clear();
+        }
+
+        private void GoMain_Click(object v, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
+
         private void deletAnswer(object v, RoutedEventArgs e)
         {
             Button b = (Button)v;                       //Нажатая кнопка

@@ -40,7 +40,7 @@ namespace Tests_for_students
 
         private void CreateTest_Click (object v, RoutedEventArgs e)
         {
-            Create_EditTest cet = new Create_EditTest(null);
+            Create_EditTest cet = new Create_EditTest(new Test(null));
             cet.Show();
             this.Close();
         }

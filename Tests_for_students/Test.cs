@@ -12,9 +12,8 @@ namespace Tests_for_students
     [Serializable]
     public class Test
     {
-        public string testName = "";
+        public string testName = "Название теста";
         public string author = "";
-        public string data;
         public string desckription = "";
         public string userName;
 
