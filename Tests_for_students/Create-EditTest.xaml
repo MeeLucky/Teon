@@ -12,12 +12,12 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer x:Name="C_Left" Background="#eee" Grid.Row="0" Grid.RowSpan="2">
-            <StackPanel>
+        <ScrollViewer x:Name="C_Left" Background="#eee" Grid.Row="0">
+            <StackPanel> 
                 <Button x:Name="C_TestName" Click="SetTest_Click" Content="Название теста" 
                      Background="#eee" FontSize="16"/>
 
@@ -29,7 +29,7 @@
 
             </StackPanel>
         </ScrollViewer>
-
+        
         <ScrollViewer Grid.Row="0" Grid.Column="1">
             <StackPanel x:Name="C_Right" 
                     Orientation="Vertical" >

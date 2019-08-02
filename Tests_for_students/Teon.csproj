@@ -61,12 +61,6 @@
       <DependentUpon>Create-EditTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Question.cs" />
-    <Compile Include="Student.xaml.cs">
-      <DependentUpon>Student.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Teacher.xaml.cs">
-      <DependentUpon>Teacher.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Test.cs" />
     <Compile Include="TestResult.xaml.cs">
       <DependentUpon>TestResult.xaml</DependentUpon>
@@ -90,14 +84,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Student.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Teacher.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="TestResult.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

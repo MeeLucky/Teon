@@ -15,7 +15,8 @@ namespace Tests_for_students
         public string testName = "Название теста";
         public string author = "";
         public string desckription = "";
-        public string userName;
+        public string userName = "Anonym";
+        public string password = "";
 
         public List<Question> qList = new List<Question>();
 

@@ -31,7 +31,7 @@ namespace Tests_for_students
             C_TestName.Content = test.testName;
             RefreshQList();
         }
-
+        
         private void AddQuest_Click (object v, RoutedEventArgs e)
         {
             int num = test.qList.Count() + 1;
@@ -218,7 +218,7 @@ namespace Tests_for_students
                     mask[i] = Convert.ToInt32(TBball.Text);
 
                 TextBox TBanswer = (TextBox)str.Children[2];
-                ans[i] = TBball.Text.ToString();
+                ans[i] = TBanswer.Text.ToString();
             }
 
             test.qList[id] = new Question(quest, ans, mask);
@@ -309,6 +309,17 @@ namespace Tests_for_students
             deskTip.Margin = new Thickness(30, 0, 0, 0);
             //deskTip
 
+            //password and pass tip
+            TextBlock pasTip = new TextBlock();
+            pasTip.Text = "Пароль. Обязательно придумайте пароль, чтобы ограничить доступ к изменению теста без вашего ведома!";
+            pasTip.FontSize = 16;
+            pasTip.Margin = new Thickness(30, 0, 0, 0);
+
+            PasswordBox pass = new PasswordBox();
+            pass.FontSize = 16;
+            pass.Margin = new Thickness(20, 0, 20, 0);
+            
+
             C_Right.Children.Clear();
             C_Right.Children.Add(testNameTip);
             C_Right.Children.Add(testName);
@@ -316,6 +327,8 @@ namespace Tests_for_students
             C_Right.Children.Add(author);
             C_Right.Children.Add(deskTip);
             C_Right.Children.Add(desk);
+            C_Right.Children.Add(pasTip);
+            C_Right.Children.Add(pass);
             C_Right.Children.Add(SaveTestInfo);
         }
 
@@ -327,6 +340,7 @@ namespace Tests_for_students
             TextBox testName = (TextBox)root.Children[1];
             TextBox author = (TextBox)root.Children[3];
             TextBox desk = (TextBox)root.Children[5];
+            PasswordBox pass = (PasswordBox)root.Children[7];
 
             StackPanel btnParent = (StackPanel)btn.Parent;
             C_TestName.Content = testName.Text;
@@ -334,6 +348,10 @@ namespace Tests_for_students
             test.testName = testName.Text;
             test.author = author.Text;
             test.desckription = desk.Text;
+            if (pass.Password.ToString().Trim() != "")
+            {
+                test.password = pass.Password.ToString().Trim();
+            }
 
             btnParent.Children.Clear();
         }
@@ -348,7 +366,7 @@ namespace Tests_for_students
                 int dotPos = path.Substring(0, path.Length).IndexOf(".");
                 if (dotPos != -1)
                     path = path.Substring(0, path.Length - (path.Length - dotPos));
-                path += ".dat";
+                path += ".teon";
 
                 test.SetPath(path);
                 test.SaveTest();

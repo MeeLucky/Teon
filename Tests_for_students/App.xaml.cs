@@ -13,5 +13,24 @@ namespace Tests_for_students
     /// </summary>
     public partial class App : Application
     {
+        void App_Startup(object sender, StartupEventArgs e)
+        {
+            string fileName = e.Args?.FirstOrDefault();
+            MainWindow mainWindow;
+            if (!string.IsNullOrWhiteSpace(fileName))
+            {
+                Test test = Test.OpenTest(fileName);
+                testWindow win = new testWindow(test);
+                win.Show();
+            }
+            else
+            {
+                mainWindow = new MainWindow();
+                mainWindow.Show();
+            }
+                
+
+            
+        }
     }
 }

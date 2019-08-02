@@ -4,15 +4,11 @@ D:\projects\Teon\Tests_for_students\bin\Debug\Tests_for_students.pdb
 D:\projects\Teon\Tests_for_students\obj\Debug\Teon.csprojAssemblyReference.cache
 D:\projects\Teon\Tests_for_students\obj\Debug\MainWindow.baml
 D:\projects\Teon\Tests_for_students\obj\Debug\MainWindow.g.cs
-D:\projects\Teon\Tests_for_students\obj\Debug\Student.g.cs
-D:\projects\Teon\Tests_for_students\obj\Debug\Teacher.g.cs
 D:\projects\Teon\Tests_for_students\obj\Debug\TestResult.g.cs
 D:\projects\Teon\Tests_for_students\obj\Debug\testWindow.g.cs
 D:\projects\Teon\Tests_for_students\obj\Debug\App.g.cs
 D:\projects\Teon\Tests_for_students\obj\Debug\Tests_for_students_MarkupCompile.cache
 D:\projects\Teon\Tests_for_students\obj\Debug\Tests_for_students_MarkupCompile.lref
-D:\projects\Teon\Tests_for_students\obj\Debug\Student.baml
-D:\projects\Teon\Tests_for_students\obj\Debug\Teacher.baml
 D:\projects\Teon\Tests_for_students\obj\Debug\TestResult.baml
 D:\projects\Teon\Tests_for_students\obj\Debug\testWindow.baml
 D:\projects\Teon\Tests_for_students\obj\Debug\Tests_for_students.g.resources

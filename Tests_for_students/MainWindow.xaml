@@ -5,10 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="Teon"
         Height="500" Width="600">
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-        <Button Content="Студент" Width="150" Height="70" Click="Student_Click" 
+    <StackPanel VerticalAlignment="Center" Orientation="Vertical" Margin="0, 0, 0, 75">
+        <Button Width="75" Height="30" Margin="0, 0, 50, 0" 
+                FontSize="17" Visibility="Collapsed"
+                VerticalAlignment="Top" HorizontalAlignment="Right"
+                Content="Назад" x:Name="BackMain" Click="BackMain_Click"/>
+        
+        <StackPanel x:Name="Main" Visibility="Visible"
+            Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Студент" Width="150" Height="70" Click="Student_Click" 
                 Margin="40, 0" FontSize="20"/>
-        <Button Content="Преподаватель" Width="150" Height="70" Click="Teacher_Click"  
+            <Button Content="Преподаватель" Width="150" Height="70" Click="Teacher_Click"  
                 Margin="40, 0" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel x:Name="Student" Margin="20" Visibility="Collapsed"
+            Orientation="Vertical" HorizontalAlignment="Center">
+            <StackPanel x:Name="firstPanel" Orientation="Vertical">
+                <TextBlock FontSize="20" Margin="0, 0, 20, 0" HorizontalAlignment="Center">Имя Фамилие</TextBlock>
+                <TextBox Width="300" x:Name="C_UserName" FontSize="18"></TextBox>
+                <Button FontSize="18" Width="170" Margin="0,10" Click="openTest_Click">Открыть тест</Button>
+                <StackPanel>
+                    <Button FontSize="18" Width="230" Click="StartTest_Click">Начать тестирование</Button>
+                    <TextBlock x:Name="C_testName" HorizontalAlignment="Left" 
+                               FontSize="18" Margin="10"/>
+                    <TextBlock x:Name="C_testDesk" HorizontalAlignment="Center" 
+                               FontSize="16" Margin="10" TextWrapping="Wrap"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Teacher" Visibility="Collapsed"  
+                    Margin="20" Width="350"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock TextWrapping="Wrap" FontSize="18" 
+                   TextAlignment="Center"
+                   Text="Вы можете редактировать уже ранее созданный тест или создать новый."/>
+            <Button FontSize="18" Margin="30,10" 
+                Click="EditTest_Click" Content="Редактировать тест"/>
+            <Button FontSize="18" Margin="30,10" 
+                Click="CreateTest_Click" Content="Создать тест" />
+            <StackPanel x:Name="passFild" Orientation="Vertical"/>
+        </StackPanel>
     </StackPanel>
+    
 </Window> 

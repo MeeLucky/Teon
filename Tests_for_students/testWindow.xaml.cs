@@ -52,6 +52,7 @@ namespace Tests_for_students
                 TextBlock question = new TextBlock();
                 question.Text = Convert.ToString(num) + ") " + item.GetQuestion();
                 question.FontSize = 20;
+                question.TextWrapping = TextWrapping.Wrap;
                 quest.Children.Add(question);
 
                 string[] answer = item.GetAnswers();
@@ -62,8 +63,14 @@ namespace Tests_for_students
                 {
                     RadioButton ans = new RadioButton();
                     ans.GroupName =  item.GetQuestion();
-                    ans.Content = answer[i];
-                    ans.Width = this.Width * 2;
+
+                    TextBlock content = new TextBlock();
+                    content.TextWrapping = TextWrapping.Wrap;
+                    content.Text = answer[i];
+                    ans.Content = content;
+
+                    ans.Width = this.Width * 1.7;
+                    ans.HorizontalAlignment = HorizontalAlignment.Left;
                     ans.MouseEnter += RBMEnter;
                     ans.MouseLeave += RBMLeave;
                     ans.Tag = num + "|" + Convert.ToString(Mask[i]);
