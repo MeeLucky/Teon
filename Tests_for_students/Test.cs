@@ -15,10 +15,12 @@ namespace Tests_for_students
         public string testName = "Название теста";
         public string author = "";
         public string desckription = "";
-        public string userName = "Anonym";
+        public string userName = "Аноним";
         public string password = "";
 
-        public List<Question> qList = new List<Question>();
+        public List<Question> qList = new List<Question>() { new Question("Пример вопроса",
+                                                            new string[] { "Пример ответа 1", "Пример ответа 2", "Пример ответа 3 (правильный)" },
+                                                            new int[] { 0, 0, 1 } ) };
 
         private string path;
 

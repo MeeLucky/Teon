@@ -133,8 +133,7 @@ namespace Tests_for_students
 
             if (pas.Password.ToString() == test.password)
             {
-                Create_EditTest CEt = new Create_EditTest(test);
-                CEt.Show();
+                new Create_EditTest(test).Show();
                 this.Close();
             }
             else
@@ -155,8 +154,7 @@ namespace Tests_for_students
 
         private void CreateTest_Click(object v, RoutedEventArgs e)
         {
-            Create_EditTest cet = new Create_EditTest(new Test(null));
-            cet.Show();
+            new Create_EditTest(new Test(null), true).Show();
             this.Close();
         }
 
