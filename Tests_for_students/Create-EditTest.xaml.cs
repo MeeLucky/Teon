@@ -106,6 +106,7 @@ namespace Tests_for_students
                 balls.FontSize = 14;
                 balls.Width = 30;
                 balls.Text = mask[i].ToString();
+                balls.ToolTip = "Если оставить поле пустым, оно будет раным 0";
 
                 TextBox answer = new TextBox();
                 answer.Text = ans[i];
