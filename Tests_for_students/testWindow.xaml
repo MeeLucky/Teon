@@ -9,6 +9,10 @@
         Title="testWindow" Height="450" Width="800">
     <ScrollViewer>
         <StackPanel x:Name="root">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="ФИО"/>
+                <TextBox x:Name="C_UserName" Width="500"/>
+            </StackPanel>
         </StackPanel>
     </ScrollViewer>
 </Window>

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Tests_for_students
 {
@@ -132,6 +133,17 @@ namespace Tests_for_students
             times[0] = startTest;
             times[1] = DateTime.Now;
 
+            if(C_UserName.Text.Trim() != "")
+                test.userName = C_UserName.Text.Trim();
+            else
+            {
+                System.Windows.Forms.DialogResult dialogResult = 
+                    MessageBox.Show("Вы хотите закончить тест как аноним? ", 
+                    "Не указано ФИО", 
+                    System.Windows.Forms.MessageBoxButtons.YesNo);
+                if (dialogResult == System.Windows.Forms.DialogResult.No)
+                    return;
+            }
             TestResult tr = new TestResult(test, userTest, times);
             tr.Show();
             this.Close();

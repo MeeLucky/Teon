@@ -39,7 +39,7 @@ namespace Tests_for_students
         private void AddQuest_Click (object v, RoutedEventArgs e)
         {
             int num = test.qList.Count() + 1;
-            test.qList.Add(new Question($"Вопрос {num}", new[] { "Beastewttwr", "Endi" }, new[] { 0, 1}));
+            test.qList.Add(new Question($"Вопрос {num}", new[] { "", }, new[] { 0, }));
             RefreshQList();
         }
         

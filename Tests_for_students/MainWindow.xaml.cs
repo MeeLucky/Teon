@@ -76,18 +76,8 @@ namespace Tests_for_students
 
         private void StartTest_Click(object sender, RoutedEventArgs e)
         {
-            if (C_UserName.Text == "" && !tryName)
-            {
-                MessageBox.Show("Если не указать имя, то вы продолжите как аноним!");
-                tryName = true;
-                return;
-            }
-
             if (testSelected)
             {
-                if(C_UserName.Text.Trim() != "")
-                    test.userName = C_UserName.Text;
-
                 testWindow testWin = new testWindow(test);
                 testWin.Show();
                 this.Close();

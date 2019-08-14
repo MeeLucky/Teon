@@ -16,17 +16,14 @@ namespace Tests_for_students
         void App_Startup(object sender, StartupEventArgs e)
         {
             string fileName = e.Args?.FirstOrDefault();
-            MainWindow mainWindow;
             if (!string.IsNullOrWhiteSpace(fileName))
             {
                 Test test = Test.OpenTest(fileName);
-                testWindow win = new testWindow(test);
-                win.Show();
+                new testWindow(test).Show();
             }
             else
             {
-                mainWindow = new MainWindow();
-                mainWindow.Show();
+                new MainWindow().Show();
             }
                 
 
