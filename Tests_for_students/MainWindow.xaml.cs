@@ -85,6 +85,9 @@ namespace Tests_for_students
 
             if (testSelected)
             {
+                if(C_UserName.Text.Trim() != "")
+                    test.userName = C_UserName.Text;
+
                 testWindow testWin = new testWindow(test);
                 testWin.Show();
                 this.Close();
